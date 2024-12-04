@@ -6,9 +6,7 @@
 #include "Engine/AssetManager.h"
 #include "DemoAssetManager.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
 class DEMO_API UDemoAssetManager : public UAssetManager
 {

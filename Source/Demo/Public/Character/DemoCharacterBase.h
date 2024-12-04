@@ -4,10 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "DemoCharacterBase.generated.h"
+#include "GameplayTagContainer.h"
 #include "AbilitySystemInterface.h"
+#include "Demo/Demo.h"
+#include "DemoCharacterBase.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParams(FCharacterDiedDelegate, ADemoCharacterBase*, character);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterDiedDelegate, ADemoCharacterBase*, Character);
 
 
 UCLASS()
@@ -36,16 +38,16 @@ public:
 	UPROPERTY(BlueprintCallable, Category = "Demo|Character")
 	virtual void FinishDying();
 
-	UFUNCTION(BlueprintCallable, Categoru = "Demo|Character|Attribute")
+	UFUNCTION(BlueprintCallable, Category = "Demo|Character|Attribute")
 	float GetHealth() const;
 
-	UFUNCTION(BlueprintCallable, Categoru = "Demo|Character|Attribute")
+	UFUNCTION(BlueprintCallable, Category = "Demo|Character|Attribute")
 	float GetMaxHealth() const;
 
-	UFUNCTION(BlueprintCallable, Categoru = "Demo|Character|Attribute")
+	UFUNCTION(BlueprintCallable, Category = "Demo|Character|Attribute")
 	float GetStamina() const;
 
-	UFUNCTION(BlueprintCallable, Categoru = "Demo|Character|Attribute")
+	UFUNCTION(BlueprintCallable, Category = "Demo|Character|Attribute")
 	float GetMaxStamina() const;
 
 
@@ -53,8 +55,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	TWeakObjectPtr<class CharacterAbilitySystemComponent> AbilitySystemComponent;
-	TWeakObjectPtr<class CharacterAttributeSetBase> AttributeSetBase;
+	TWeakObjectPtr<class UCharacterAbilitySystemComponent> AbilitySystemComponent;
+	TWeakObjectPtr<class UCharacterAttributeSetBase> AttributeSetBase;
 
 	FGameplayTag DeadTag;
 	FGameplayTag EffectRemoveOnDeathTag;
@@ -64,12 +66,15 @@ protected:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Demo|Animation")
 	UAnimMontage* DeathMontage;
-	
+
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Demo|Abilities")
 	TSubclassOf<class UGameplayEffect> DefaultAttributes;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Demo|Abilities")
-	TArray<class UGameplayEffect> StartupEffects;
+	TArray<TSubclassOf<class UCharacterGameplayAbility>> CharacterAbilities;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Demo|Abilities")
+	TArray<TSubclassOf<class UGameplayEffect>> StartupEffects;
 
 	virtual void AddCharacterAbilities();
 
@@ -81,7 +86,8 @@ protected:
 
 	virtual void SetStamina(float Stamina);
 
-public:	
+public:
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -90,3 +96,4 @@ public:
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 };
+
