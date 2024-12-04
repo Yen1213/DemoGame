@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"E:\\Unreal Engine\\UE Projects\\Demo\\Source\\Demo\\Demo.Build.cs",
+		"E:\\Unreal Engine\\UE Projects\\Demo\\Source\\Demo.Target.cs",
+		"E:\\Unreal Engine\\UE Projects\\Demo\\Source\\DemoEditor.Target.cs"
+	],
+	"EngineVersion": "5.4.4"
+}

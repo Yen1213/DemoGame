@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Demo.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Demo.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\DemoEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Demo">
+      <UniqueIdentifier>{759A4680-52D6-35A2-B2E1-D02C9645E0CA}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Demo\Demo.Build.cs">
+      <Filter>Source\Demo</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Demo\Demo.cpp">
+      <Filter>Source\Demo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Demo\Demo.h">
+      <Filter>Source\Demo</Filter>
+    </ClInclude>
+    <Filter Include="Source\Demo\Private">
+      <UniqueIdentifier>{0D1CECCD-58DF-3B4E-8E7F-74B289C3E59C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Demo\Private\DemoAssetManager.cpp">
+      <Filter>Source\Demo\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\Demo\Private\Character">
+      <UniqueIdentifier>{876E2634-1187-3FBF-AC2E-84AB6156D088}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Demo\Private\Character\DemoCharacterBase.cpp">
+      <Filter>Source\Demo\Private\Character</Filter>
+    </ClCompile>
+    <Filter Include="Source\Demo\Private\Character\Abilities">
+      <UniqueIdentifier>{473C38A9-377D-3D4E-BF61-48CCB16E285B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Demo\Private\Character\Abilities\CharacterAbilitySystemComponent.cpp">
+      <Filter>Source\Demo\Private\Character\Abilities</Filter>
+    </ClCompile>
+    <Filter Include="Source\Demo\Private\Character\Abilities\AttributeSets">
+      <UniqueIdentifier>{5E46E957-B5B6-3E34-966E-D79CC4EF8BC7}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Demo\Private\Character\Abilities\AttributeSets\CharacterAttributeSetBase.cpp">
+      <Filter>Source\Demo\Private\Character\Abilities\AttributeSets</Filter>
+    </ClCompile>
+    <Filter Include="Source\Demo\Public">
+      <UniqueIdentifier>{09F9DEC8-B122-3714-91EE-D26799AFB9AA}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Demo\Public\DemoAssetManager.h">
+      <Filter>Source\Demo\Public</Filter>
+    </ClInclude>
+    <Filter Include="Source\Demo\Public\Character">
+      <UniqueIdentifier>{76E34D09-5921-37EC-9C6B-D8CE4B24036A}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Demo\Public\Character\DemoCharacterBase.h">
+      <Filter>Source\Demo\Public\Character</Filter>
+    </ClInclude>
+    <Filter Include="Source\Demo\Public\Character\Abilities">
+      <UniqueIdentifier>{47E5DA14-FC34-3E35-BB1A-7E512AD5940B}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Demo\Public\Character\Abilities\CharacterAbilitySystemComponent.h">
+      <Filter>Source\Demo\Public\Character\Abilities</Filter>
+    </ClInclude>
+    <Filter Include="Source\Demo\Public\Character\Abilities\AttributeSets">
+      <UniqueIdentifier>{5AEEC9EB-6976-3DD9-83FF-C4292CAF9AC8}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Demo\Public\Character\Abilities\AttributeSets\CharacterAttributeSetBase.h">
+      <Filter>Source\Demo\Public\Character\Abilities\AttributeSets</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
