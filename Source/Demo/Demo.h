@@ -8,6 +8,6 @@ UENUM(BlueprintType)
 enum class DemoAbilityID : uint8
 {
 	None UMETA(DisplayName = "None"),
-	Confirm UMETA(DisplayName = "None"), 
-	Cancel UMETA(DisplayName = "None")
+	Confirm UMETA(DisplayName = "Confirm"), 
+	Cancel UMETA(DisplayName = "Cancel")
 };

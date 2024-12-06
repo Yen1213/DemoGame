@@ -63,6 +63,51 @@ DEFINE_FUNCTION(UCharacterAttributeSetBase::execOnRep_Health)
 }
 // End Class UCharacterAttributeSetBase Function OnRep_Health
 
+// Begin Class UCharacterAttributeSetBase Function OnRep_Level
+struct Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics
+{
+	struct CharacterAttributeSetBase_eventOnRep_Level_Parms
+	{
+		FGameplayAttributeData OldLevel;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Character/Abilities/AttributeSets/CharacterAttributeSetBase.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OldLevel_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_OldLevel;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics::NewProp_OldLevel = { "OldLevel", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterAttributeSetBase_eventOnRep_Level_Parms, OldLevel), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OldLevel_MetaData), NewProp_OldLevel_MetaData) }; // 675369593
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics::NewProp_OldLevel,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCharacterAttributeSetBase, nullptr, "OnRep_Level", nullptr, nullptr, Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics::CharacterAttributeSetBase_eventOnRep_Level_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics::CharacterAttributeSetBase_eventOnRep_Level_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UCharacterAttributeSetBase::execOnRep_Level)
+{
+	P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldLevel);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnRep_Level(Z_Param_Out_OldLevel);
+	P_NATIVE_END;
+}
+// End Class UCharacterAttributeSetBase Function OnRep_Level
+
 // Begin Class UCharacterAttributeSetBase Function OnRep_MaxHealth
 struct Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_MaxHealth_Statics
 {
@@ -204,6 +249,7 @@ void UCharacterAttributeSetBase::StaticRegisterNativesUCharacterAttributeSetBase
 	UClass* Class = UCharacterAttributeSetBase::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "OnRep_Health", &UCharacterAttributeSetBase::execOnRep_Health },
+		{ "OnRep_Level", &UCharacterAttributeSetBase::execOnRep_Level },
 		{ "OnRep_MaxHealth", &UCharacterAttributeSetBase::execOnRep_MaxHealth },
 		{ "OnRep_MaxStamina", &UCharacterAttributeSetBase::execOnRep_MaxStamina },
 		{ "OnRep_Stamina", &UCharacterAttributeSetBase::execOnRep_Stamina },
@@ -220,6 +266,10 @@ struct Z_Construct_UClass_UCharacterAttributeSetBase_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "IncludePath", "Character/Abilities/AttributeSets/CharacterAttributeSetBase.h" },
+		{ "ModuleRelativePath", "Public/Character/Abilities/AttributeSets/CharacterAttributeSetBase.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Level_MetaData[] = {
+		{ "Category", "Level" },
 		{ "ModuleRelativePath", "Public/Character/Abilities/AttributeSets/CharacterAttributeSetBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Health_MetaData[] = {
@@ -243,6 +293,7 @@ struct Z_Construct_UClass_UCharacterAttributeSetBase_Statics
 		{ "ModuleRelativePath", "Public/Character/Abilities/AttributeSets/CharacterAttributeSetBase.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_Level;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_Health;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_MaxHealth;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_Stamina;
@@ -252,6 +303,7 @@ struct Z_Construct_UClass_UCharacterAttributeSetBase_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Health, "OnRep_Health" }, // 1359472851
+		{ &Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Level, "OnRep_Level" }, // 4250371205
 		{ &Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_MaxHealth, "OnRep_MaxHealth" }, // 4264198023
 		{ &Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_MaxStamina, "OnRep_MaxStamina" }, // 4034027617
 		{ &Z_Construct_UFunction_UCharacterAttributeSetBase_OnRep_Stamina, "OnRep_Stamina" }, // 34267831
@@ -262,12 +314,14 @@ struct Z_Construct_UClass_UCharacterAttributeSetBase_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UCharacterAttributeSetBase_Statics::NewProp_Level = { "Level", "OnRep_Level", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAttributeSetBase, Level), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Level_MetaData), NewProp_Level_MetaData) }; // 675369593
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UCharacterAttributeSetBase_Statics::NewProp_Health = { "Health", "OnRep_Health", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAttributeSetBase, Health), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Health_MetaData), NewProp_Health_MetaData) }; // 675369593
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UCharacterAttributeSetBase_Statics::NewProp_MaxHealth = { "MaxHealth", "OnRep_MaxHealth", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAttributeSetBase, MaxHealth), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxHealth_MetaData), NewProp_MaxHealth_MetaData) }; // 675369593
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UCharacterAttributeSetBase_Statics::NewProp_Stamina = { "Stamina", "OnRep_Stamina", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAttributeSetBase, Stamina), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Stamina_MetaData), NewProp_Stamina_MetaData) }; // 675369593
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UCharacterAttributeSetBase_Statics::NewProp_MaxStamina = { "MaxStamina", "OnRep_MaxStamina", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAttributeSetBase, MaxStamina), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxStamina_MetaData), NewProp_MaxStamina_MetaData) }; // 675369593
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UCharacterAttributeSetBase_Statics::NewProp_Damage = { "Damage", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAttributeSetBase, Damage), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Damage_MetaData), NewProp_Damage_MetaData) }; // 675369593
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UCharacterAttributeSetBase_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterAttributeSetBase_Statics::NewProp_Level,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterAttributeSetBase_Statics::NewProp_Health,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterAttributeSetBase_Statics::NewProp_MaxHealth,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterAttributeSetBase_Statics::NewProp_Stamina,
@@ -309,11 +363,13 @@ template<> DEMO_API UClass* StaticClass<UCharacterAttributeSetBase>()
 }
 void UCharacterAttributeSetBase::ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const
 {
+	static const FName Name_Level(TEXT("Level"));
 	static const FName Name_Health(TEXT("Health"));
 	static const FName Name_MaxHealth(TEXT("MaxHealth"));
 	static const FName Name_Stamina(TEXT("Stamina"));
 	static const FName Name_MaxStamina(TEXT("MaxStamina"));
 	const bool bIsValid = true
+		&& Name_Level == ClassReps[(int32)ENetFields_Private::Level].Property->GetFName()
 		&& Name_Health == ClassReps[(int32)ENetFields_Private::Health].Property->GetFName()
 		&& Name_MaxHealth == ClassReps[(int32)ENetFields_Private::MaxHealth].Property->GetFName()
 		&& Name_Stamina == ClassReps[(int32)ENetFields_Private::Stamina].Property->GetFName()
@@ -329,10 +385,10 @@ UCharacterAttributeSetBase::~UCharacterAttributeSetBase() {}
 struct Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCharacterAttributeSetBase, UCharacterAttributeSetBase::StaticClass, TEXT("UCharacterAttributeSetBase"), &Z_Registration_Info_UClass_UCharacterAttributeSetBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterAttributeSetBase), 4085847970U) },
+		{ Z_Construct_UClass_UCharacterAttributeSetBase, UCharacterAttributeSetBase::StaticClass, TEXT("UCharacterAttributeSetBase"), &Z_Registration_Info_UClass_UCharacterAttributeSetBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterAttributeSetBase), 3175256339U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_538719073(TEXT("/Script/Demo"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_1377744325(TEXT("/Script/Demo"),
 	Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

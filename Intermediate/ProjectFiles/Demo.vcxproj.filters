@@ -11,7 +11,10 @@
     <None Include="..\..\Source\DemoEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\README.md" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -25,6 +28,9 @@
       <Filter>Config</Filter>
     </None>
     <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGameplayTags.ini">
       <Filter>Config</Filter>
     </None>
     <None Include="..\..\Config\DefaultInput.ini">
@@ -48,6 +54,12 @@
     <ClCompile Include="..\..\Source\Demo\Private\DemoAssetManager.cpp">
       <Filter>Source\Demo\Private</Filter>
     </ClCompile>
+    <Filter Include="Source\Demo\Private\AI">
+      <UniqueIdentifier>{152A7834-3048-3609-9A58-B3DFCCCCD5CB}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Demo\Private\AI\PlayerAIController.cpp">
+      <Filter>Source\Demo\Private\AI</Filter>
+    </ClCompile>
     <Filter Include="Source\Demo\Private\Character">
       <UniqueIdentifier>{876E2634-1187-3FBF-AC2E-84AB6156D088}</UniqueIdentifier>
     </Filter>
@@ -60,17 +72,50 @@
     <ClCompile Include="..\..\Source\Demo\Private\Character\Abilities\CharacterAbilitySystemComponent.cpp">
       <Filter>Source\Demo\Private\Character\Abilities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Demo\Private\Character\Abilities\CharacterGameplayAbility.cpp">
+      <Filter>Source\Demo\Private\Character\Abilities</Filter>
+    </ClCompile>
     <Filter Include="Source\Demo\Private\Character\Abilities\AttributeSets">
       <UniqueIdentifier>{5E46E957-B5B6-3E34-966E-D79CC4EF8BC7}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Demo\Private\Character\Abilities\AttributeSets\CharacterAttributeSetBase.cpp">
       <Filter>Source\Demo\Private\Character\Abilities\AttributeSets</Filter>
     </ClCompile>
+    <Filter Include="Source\Demo\Private\Character\Player">
+      <UniqueIdentifier>{F4117413-5F72-3E58-BDD8-0F339C3BB5EC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Demo\Private\Character\Player\DemoPlayerCharacterBase.cpp">
+      <Filter>Source\Demo\Private\Character\Player</Filter>
+    </ClCompile>
+    <Filter Include="Source\Demo\Private\Player">
+      <UniqueIdentifier>{65C45558-EC80-30B0-A933-105755BB774E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Demo\Private\Player\DemoPlayerController.cpp">
+      <Filter>Source\Demo\Private\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Demo\Private\Player\DemoPlayerState.cpp">
+      <Filter>Source\Demo\Private\Player</Filter>
+    </ClCompile>
+    <Filter Include="Source\Demo\Private\UI">
+      <UniqueIdentifier>{BDE7F54E-FD86-3FBE-902B-7154DD1F58F6}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Demo\Private\UI\DemoHUD.cpp">
+      <Filter>Source\Demo\Private\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Demo\Private\UI\DemoUserWidget.cpp">
+      <Filter>Source\Demo\Private\UI</Filter>
+    </ClCompile>
     <Filter Include="Source\Demo\Public">
       <UniqueIdentifier>{09F9DEC8-B122-3714-91EE-D26799AFB9AA}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\Demo\Public\DemoAssetManager.h">
       <Filter>Source\Demo\Public</Filter>
+    </ClInclude>
+    <Filter Include="Source\Demo\Public\AI">
+      <UniqueIdentifier>{3C7FD3AA-1D73-306D-8383-7156A527E9CF}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Demo\Public\AI\PlayerAIController.h">
+      <Filter>Source\Demo\Public\AI</Filter>
     </ClInclude>
     <Filter Include="Source\Demo\Public\Character">
       <UniqueIdentifier>{76E34D09-5921-37EC-9C6B-D8CE4B24036A}</UniqueIdentifier>
@@ -84,11 +129,38 @@
     <ClInclude Include="..\..\Source\Demo\Public\Character\Abilities\CharacterAbilitySystemComponent.h">
       <Filter>Source\Demo\Public\Character\Abilities</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Demo\Public\Character\Abilities\CharacterGameplayAbility.h">
+      <Filter>Source\Demo\Public\Character\Abilities</Filter>
+    </ClInclude>
     <Filter Include="Source\Demo\Public\Character\Abilities\AttributeSets">
       <UniqueIdentifier>{5AEEC9EB-6976-3DD9-83FF-C4292CAF9AC8}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\Demo\Public\Character\Abilities\AttributeSets\CharacterAttributeSetBase.h">
       <Filter>Source\Demo\Public\Character\Abilities\AttributeSets</Filter>
+    </ClInclude>
+    <Filter Include="Source\Demo\Public\Character\Player">
+      <UniqueIdentifier>{A06BAF19-DA57-36AB-951D-1E214E522FCC}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Demo\Public\Character\Player\DemoPlayerCharacterBase.h">
+      <Filter>Source\Demo\Public\Character\Player</Filter>
+    </ClInclude>
+    <Filter Include="Source\Demo\Public\Player">
+      <UniqueIdentifier>{DF43498E-5F09-39B3-8BFE-14B9DC9576CE}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Demo\Public\Player\DemoPlayerController.h">
+      <Filter>Source\Demo\Public\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Demo\Public\Player\DemoPlayerState.h">
+      <Filter>Source\Demo\Public\Player</Filter>
+    </ClInclude>
+    <Filter Include="Source\Demo\Public\UI">
+      <UniqueIdentifier>{9F89E087-EAB0-3029-BCB6-8BB9B6B7A944}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Demo\Public\UI\DemoHUD.h">
+      <Filter>Source\Demo\Public\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Demo\Public\UI\DemoUserWidget.h">
+      <Filter>Source\Demo\Public\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

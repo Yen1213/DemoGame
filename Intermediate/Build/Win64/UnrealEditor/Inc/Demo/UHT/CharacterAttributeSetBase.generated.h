@@ -16,14 +16,15 @@ struct FGameplayAttributeData;
 #endif
 #define DEMO_CharacterAttributeSetBase_generated_h
 
-#define FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_23_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnRep_MaxStamina); \
 	DECLARE_FUNCTION(execOnRep_Stamina); \
 	DECLARE_FUNCTION(execOnRep_MaxHealth); \
-	DECLARE_FUNCTION(execOnRep_Health);
+	DECLARE_FUNCTION(execOnRep_Health); \
+	DECLARE_FUNCTION(execOnRep_Level);
 
 
-#define FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_20_INCLASS_NO_PURE_DECLS \
+#define FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_23_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUCharacterAttributeSetBase(); \
 	friend struct Z_Construct_UClass_UCharacterAttributeSetBase_Statics; \
@@ -33,7 +34,8 @@ public: \
 	enum class ENetFields_Private : uint16 \
 	{ \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
-		Health=NETFIELD_REP_START, \
+		Level=NETFIELD_REP_START, \
+		Health, \
 		MaxHealth, \
 		Stamina, \
 		MaxStamina, \
@@ -44,7 +46,7 @@ private: \
 public:
 
 
-#define FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_20_ENHANCED_CONSTRUCTORS \
+#define FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_23_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UCharacterAttributeSetBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -58,13 +60,13 @@ public: \
 	NO_API virtual ~UCharacterAttributeSetBase();
 
 
-#define FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_17_PROLOG
-#define FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_20_GENERATED_BODY \
+#define FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_20_PROLOG
+#define FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_23_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_20_INCLASS_NO_PURE_DECLS \
-	FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_20_ENHANCED_CONSTRUCTORS \
+	FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_23_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_23_INCLASS_NO_PURE_DECLS \
+	FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_23_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
