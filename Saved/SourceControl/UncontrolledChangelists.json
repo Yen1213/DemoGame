@@ -1,0 +1,13 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"E:/Unreal Engine/UE Projects/Demo/Content/Demo/Characters/Player/BP_PlayerCharacter.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/Demo/Characters/Player/GE_PlayerAttribute.uasset"
+			]
+		}
+	]
+}

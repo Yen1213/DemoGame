@@ -3,12 +3,16 @@
 
 #include "Character/DemoCharacterBase.h"
 #include "Components/CapsuleComponent.h"
+#include "AbilitySystemComponent.h"
 #include "Character/Abilities/CharacterAbilitySystemComponent.h"
+#include "Character/Abilities/AttributeSets/CharacterAttributeSetBase.h"
+#include "Character/Abilities/CharacterGameplayAbility.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
-ADemoCharacterBase::ADemoCharacterBase(const class FObjectInitializer& ObjectInitializer)
+ADemoCharacterBase::ADemoCharacterBase(const class FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UCharacterMovementComponent>(ACharacter::CharacterMovementComponentName))
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 
@@ -16,8 +20,8 @@ ADemoCharacterBase::ADemoCharacterBase(const class FObjectInitializer& ObjectIni
 
 	bAlwaysRelevant = true;
 
-	DeadTag = FGameplayTag::RequestGameplayTag(FName("Stage.Dead"));
-	EffectRemoveOnDeathTag = FGameplayTag::RequestGameplayTag(FName("Stage.RemoveOnDeath"));
+	DeadTag = FGameplayTag::RequestGameplayTag(FName("State.Dead"));
+	EffectRemoveOnDeathTag = FGameplayTag::RequestGameplayTag(FName("State.RemoveOnDeath"));
 
 }
 
@@ -51,33 +55,167 @@ void ADemoCharacterBase::RemoveCharacterAbilities()
 			AbilitiesToRemove.Add(Spec.Handle);
 		}
 	}
-	
-	for (const FGameplayAbilitySpecHandle& Handle : AbilitiesToRemove)
+
+	for (int32 i = 0; i < AbilitiesToRemove.Num(); i++)
 	{
-		AbilitySystemComponent->ClearAbility(Handle);
+		AbilitySystemComponent->ClearAbility(AbilitiesToRemove[i]);
 	}
 
 	AbilitySystemComponent->CharacterAbilitiesGiven = false;
+}
+
+float ADemoCharacterBase::GetCharacterLevel() const
+{
+	if (AttributeSetBase->GetLevel()) {
+		return AttributeSetBase->GetLevel();
+	}
+	return 0.0f;
+}
+
+float ADemoCharacterBase::GetHealth() const
+{
+	if (AttributeSetBase->GetHealth()) {
+		return AttributeSetBase->GetHealth();
+	}
+	return 0.0f;
+}
+
+float ADemoCharacterBase::GetStamina() const
+{
+	if (AttributeSetBase->GetStamina()) {
+		return AttributeSetBase->GetStamina();
+	}
+	return 0.0f;
+}
+
+float ADemoCharacterBase::GetMaxHealth() const
+{
+	if (AttributeSetBase->GetMaxHealth()) {
+		return AttributeSetBase->GetMaxHealth();
+	}
+	return 0.0f;
+}
+
+float ADemoCharacterBase::GetMaxStamina() const
+{
+	if (AttributeSetBase->GetMaxStamina()) {
+		return AttributeSetBase->GetMaxStamina();
+	}
+	return 0.0f;
+}
+
+void ADemoCharacterBase::Die() {
+	RemoveCharacterAbilities();
+
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	GetCharacterMovement()->GravityScale = 1;
+	GetCharacterMovement()->Velocity = FVector(0);
+
+	OnCharacterDied.Broadcast(this);
+
+	if (AbilitySystemComponent.IsValid()) {
+		AbilitySystemComponent->CancelAbilities();
+
+		FGameplayTagContainer EffectTagsToRemove;
+		EffectTagsToRemove.AddTag(EffectRemoveOnDeathTag);
+		int32 NumEffectsRemoved = AbilitySystemComponent->RemoveActiveEffectsWithTags(EffectTagsToRemove);
+		AbilitySystemComponent->AddLooseGameplayTag(DeadTag);
+	}
+	if (DeathMontage)
+	{
+		PlayAnimMontage(DeathMontage);
+	}
+	else
+	{
+		FinishDying();
+	}
+}
+
+void ADemoCharacterBase::FinishDying() {
+	Destroy();
+
 }
 
 // Called when the game starts or when spawned
 void ADemoCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
-// Called every frame
-void ADemoCharacterBase::Tick(float DeltaTime)
+void ADemoCharacterBase::AddCharacterAbilities()
 {
-	Super::Tick(DeltaTime);
+	if (GetLocalRole() != ROLE_Authority || !AbilitySystemComponent.IsValid() || !AbilitySystemComponent->CharacterAbilitiesGiven)
+	{
+		return;
+	}
 
+	for (TSubclassOf<UCharacterGameplayAbility>& StartupAbility : CharacterAbilities) {
+		AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(StartupAbility, GetAbilityLevel(StartupAbility.GetDefaultObject()->AbilityID), static_cast<int32>(StartupAbility.GetDefaultObject()->AbilityInputID), this));
+	}
+
+	AbilitySystemComponent->CharacterAbilitiesGiven = true;
 }
 
-// Called to bind functionality to input
-void ADemoCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void ADemoCharacterBase::AddStartupEffects()
 {
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	if (GetLocalRole() != ROLE_Authority || !AbilitySystemComponent.IsValid() || !AbilitySystemComponent->StartupEffectsApplied)
+	{
+		return;
+	}
+	FGameplayEffectContextHandle EffectContext = AbilitySystemComponent->MakeEffectContext();
+	EffectContext.AddSourceObject(this);
+
+	for (TSubclassOf<UGameplayEffect> GameplayEffect : StartupEffects)
+	{
+		FGameplayEffectSpecHandle NewHandle = AbilitySystemComponent->MakeOutgoingSpec(GameplayEffect, GetCharacterLevel(), EffectContext);
+		if (NewHandle.IsValid()) {
+			FActiveGameplayEffectHandle ActiveGEHandle = AbilitySystemComponent->ApplyGameplayEffectSpecToTarget(*NewHandle.Data.Get(), AbilitySystemComponent.Get());
+
+		}
+	}
+	AbilitySystemComponent->StartupEffectsApplied = true;
 
 }
+
+void ADemoCharacterBase::SetHealth(float Health)
+{
+	if (AttributeSetBase.IsValid()) {
+		AttributeSetBase->SetHealth(Health);
+	}
+}
+
+void ADemoCharacterBase::SetStamina(float Stamina)
+{
+	if (AttributeSetBase.IsValid()) {
+		AttributeSetBase->SetStamina(Stamina);
+	}
+}
+
+
+void ADemoCharacterBase::InitializeAttributes()
+{
+	if (!AbilitySystemComponent.IsValid())
+	{
+		return;
+	}
+
+	if (!DefaultAttributes)
+	{
+UE_LOG(LogTemp, Error, TEXT("%s() Missing DefaultAttributes for %s. Please fill in the character's Blueprint"), *FString(__FUNCTION__), *GetName());
+		return;
+
+	}
+	FGameplayEffectContextHandle EffectContext = AbilitySystemComponent->MakeEffectContext();
+	EffectContext.AddSourceObject(this);
+
+	FGameplayEffectSpecHandle NewHandle = AbilitySystemComponent->MakeOutgoingSpec(DefaultAttributes, GetCharacterLevel(), EffectContext);
+	if (NewHandle.IsValid()) {
+		FActiveGameplayEffectHandle ActiveGEHandle = AbilitySystemComponent->ApplyGameplayEffectSpecToTarget(*NewHandle.Data.Get(), AbilitySystemComponent.Get());
+
+	}
+}
+
+
+
 

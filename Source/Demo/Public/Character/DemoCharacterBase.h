@@ -24,10 +24,10 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Demo|Character")
 	FCharacterDiedDelegate OnCharacterDied;
 
-	UPROPERTY(BlueprintCallable, Category = "Demo|Character")
+	UFUNCTION(BlueprintCallable, Category = "Demo|Character")
 	virtual bool IsAlive() const;
 
-	UPROPERTY(BlueprintCallable, Category = "Demo|Character")
+	UFUNCTION(BlueprintCallable, Category = "Demo|Character")
 	virtual int32 GetAbilityLevel(DemoAbilityID AbilityID) const;
 
 	virtual void RemoveCharacterAbilities();
@@ -35,8 +35,11 @@ public:
 	virtual void Die();
 
 	//Getters
-	UPROPERTY(BlueprintCallable, Category = "Demo|Character")
-	virtual void FinishDying();
+	UFUNCTION(BlueprintCallable, Category = "Demo|Character")
+	void FinishDying();
+
+	UFUNCTION(BlueprintCallable, Category = "Demo|Character|Attribute")
+	float GetCharacterLevel() const;
 
 	UFUNCTION(BlueprintCallable, Category = "Demo|Character|Attribute")
 	float GetHealth() const;
@@ -61,7 +64,7 @@ protected:
 	FGameplayTag DeadTag;
 	FGameplayTag EffectRemoveOnDeathTag;
 
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Demo|Chatacter")
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Demo|Character")
 	FText CharacterName;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Demo|Animation")
@@ -87,12 +90,6 @@ protected:
 	virtual void SetStamina(float Stamina);
 
 public:
-
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 };

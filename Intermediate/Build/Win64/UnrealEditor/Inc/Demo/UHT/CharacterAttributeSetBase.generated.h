@@ -20,7 +20,8 @@ struct FGameplayAttributeData;
 	DECLARE_FUNCTION(execOnRep_MaxStamina); \
 	DECLARE_FUNCTION(execOnRep_Stamina); \
 	DECLARE_FUNCTION(execOnRep_MaxHealth); \
-	DECLARE_FUNCTION(execOnRep_Health);
+	DECLARE_FUNCTION(execOnRep_Health); \
+	DECLARE_FUNCTION(execOnRep_Level);
 
 
 #define FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_20_INCLASS_NO_PURE_DECLS \
@@ -33,7 +34,8 @@ public: \
 	enum class ENetFields_Private : uint16 \
 	{ \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
-		Health=NETFIELD_REP_START, \
+		Level=NETFIELD_REP_START, \
+		Health, \
 		MaxHealth, \
 		Stamina, \
 		MaxStamina, \

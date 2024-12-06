@@ -29,9 +29,6 @@ struct Z_Construct_UClass_UDemoAssetManager_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * \n */" },
-#endif
 		{ "IncludePath", "DemoAssetManager.h" },
 		{ "ModuleRelativePath", "Public/DemoAssetManager.h" },
 	};
@@ -83,10 +80,10 @@ UDemoAssetManager::~UDemoAssetManager() {}
 struct Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_DemoAssetManager_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UDemoAssetManager, UDemoAssetManager::StaticClass, TEXT("UDemoAssetManager"), &Z_Registration_Info_UClass_UDemoAssetManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDemoAssetManager), 3457659139U) },
+		{ Z_Construct_UClass_UDemoAssetManager, UDemoAssetManager::StaticClass, TEXT("UDemoAssetManager"), &Z_Registration_Info_UClass_UDemoAssetManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDemoAssetManager), 626075567U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_DemoAssetManager_h_2139186017(TEXT("/Script/Demo"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_DemoAssetManager_h_105340434(TEXT("/Script/Demo"),
 	Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_DemoAssetManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_DemoAssetManager_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
