@@ -7,7 +7,24 @@
 			"files": [
 				"E:/Unreal Engine/UE Projects/Demo/Content/Demo/Characters/Player/BP_PlayerCharacter.uasset",
 				"E:/Unreal Engine/UE Projects/Demo/Content/Demo/Characters/Player/BP_PlayerCharacter2.uasset",
-				"E:/Unreal Engine/UE Projects/Demo/Content/Characters/Mannequins/Materials/Instances/Manny/MI_Manny_03.uasset"
+				"E:/Unreal Engine/UE Projects/Demo/Content/Characters/Mannequins/Materials/Instances/Manny/MI_Manny_03.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/Demo/Characters/AI/Tasks/BTTask_RoamAround.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/8/N6/W7MNYW7PTXVEIL73BA7Y7D.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/Demo/Characters/AI/BP_AI.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/Demo/Characters/Player/AI_Controller.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/ThirdPerson/Maps/ThirdPersonMap.umap",
+				"E:/Unreal Engine/UE Projects/Demo/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/RX/IEKDXYRKYUVOY4YL040P02.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/V3/81XBBVKSA1308OD26GS864.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/C/YT/K52EHPVM5IW5NI088SJ2ZE.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/2/9E/G50OAWT9T59DTYF609YFXP.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/Demo/Characters/AI/Tasks/BTTask_ChasePlayer.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/Demo/Characters/AI/BBD_AI.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/Characters/Mannequins/Animations/Manny/BS_MM_WalkRun.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/3T/JYN0Y7AKBCG4N6QMGROBBN.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/3A/QP880SJ9CYOA2QK0UVMQ23.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/Demo/Characters/Player/TEST_CHARACTER.uasset",
+				"E:/Unreal Engine/UE Projects/Demo/Content/Demo/Characters/AI/NewBlendSpace1D.uasset"
 			]
 		}
 	]
