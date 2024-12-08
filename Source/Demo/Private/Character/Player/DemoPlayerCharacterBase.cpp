@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "Character/Player/DemoPlayerCharacterBase.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
@@ -10,10 +7,10 @@
 #include "Player/DemoPlayerController.h"
 #include "Character/Abilities/CharacterAbilitySystemComponent.h"
 #include "UI/DemoHUD.h"
+#include "Net/UnrealNetwork.h"
 #include "Kismet/KismetMathLibrary.h"
 
-
-ADemoPlayerCharacterBase::ADemoPlayerCharacterBase(const class FObjectInitializer& ObjectInitializer) 
+ADemoPlayerCharacterBase::ADemoPlayerCharacterBase(const class FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(FName("CameraBoom"));
@@ -36,7 +33,6 @@ ADemoPlayerCharacterBase::ADemoPlayerCharacterBase(const class FObjectInitialize
 	DeadTag = FGameplayTag::RequestGameplayTag(FName("State.Dead"));
 }
 
-
 void ADemoPlayerCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -47,9 +43,8 @@ void ADemoPlayerCharacterBase::SetupPlayerInputComponent(UInputComponent* Player
 	PlayerInputComponent->BindAxis("LookUpRate", this, &ADemoPlayerCharacterBase::LookUpRate);
 	PlayerInputComponent->BindAxis("Turn", this, &ADemoPlayerCharacterBase::Turn);
 	PlayerInputComponent->BindAxis("TurnRate", this, &ADemoPlayerCharacterBase::TurnRate);
-	
-	BindASCInput();
 
+	BindASCInput();
 }
 
 void ADemoPlayerCharacterBase::PossessedBy(AController* NewController)
@@ -107,7 +102,6 @@ void ADemoPlayerCharacterBase::LookUpRate(float Value)
 	if (IsAlive())
 	{
 		AddControllerPitchInput(Value * BaseLookUpRate * GetWorld()->DeltaTimeSeconds);
-
 	}
 }
 
@@ -118,8 +112,6 @@ void ADemoPlayerCharacterBase::Turn(float Value)
 		AddControllerYawInput(Value);
 	}
 }
-
-
 
 void ADemoPlayerCharacterBase::TurnRate(float Value)
 {
@@ -137,7 +129,6 @@ void ADemoPlayerCharacterBase::MoveForward(float Value)
 		AddMovementInput(ForwardDirection, Value);
 
 		UpdateMeshRotation(0.0f, -Value);
-
 	}
 }
 
@@ -153,7 +144,6 @@ void ADemoPlayerCharacterBase::MoveRight(float Value)
 			UpdateMeshRotation(Value, 0.0f);
 		}
 	}
-
 }
 
 void ADemoPlayerCharacterBase::UpdateMeshRotation(float RightValue, float ForwardValue)
@@ -175,9 +165,22 @@ void ADemoPlayerCharacterBase::UpdateMeshRotation(float RightValue, float Forwar
 		SmoothRotation.Roll = 0.0f;
 
 		GetMesh()->SetWorldRotation(SmoothRotation);
+
+		ReplicatedMeshRotation = SmoothRotation;
 	}
 }
 
+void ADemoPlayerCharacterBase::OnRep_MeshRotation()
+{
+	GetMesh()->SetWorldRotation(ReplicatedMeshRotation);
+}
+
+void ADemoPlayerCharacterBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(ADemoPlayerCharacterBase, ReplicatedMeshRotation);
+}
 
 void ADemoPlayerCharacterBase::OnRep_PlayerState()
 {
@@ -194,14 +197,10 @@ void ADemoPlayerCharacterBase::OnRep_PlayerState()
 void ADemoPlayerCharacterBase::InitializeStartingValues(ADemoPlayerState* PS)
 {
 	AbilitySystemComponent = Cast<UCharacterAbilitySystemComponent>(PS->GetAbilitySystemComponent());
-
 	PS->GetAbilitySystemComponent()->InitAbilityActorInfo(PS, this);
-
 	AttributeSetBase = PS->GetAttributeSetBase();
-
 	AbilitySystemComponent->SetTagMapCount(DeadTag, 0);
 
-	
 	InitializeAttributes();
 	SetMaxHealth(100.0f);
 	SetMaxStamina(200.0f);
@@ -209,8 +208,6 @@ void ADemoPlayerCharacterBase::InitializeStartingValues(ADemoPlayerState* PS)
 	SetStamina(GetMaxStamina());
 	InitHUD();
 }
-
-
 
 void ADemoPlayerCharacterBase::BindASCInput()
 {
@@ -232,5 +229,3 @@ void ADemoPlayerCharacterBase::InitHUD() const
 		}
 	}
 }
-
-

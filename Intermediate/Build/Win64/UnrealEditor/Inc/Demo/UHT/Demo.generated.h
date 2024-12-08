@@ -22,7 +22,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FOREACH_ENUM_DEMOABILITYID(op) \
 	op(DemoAbilityID::None) \
 	op(DemoAbilityID::Confirm) \
-	op(DemoAbilityID::Cancel) 
+	op(DemoAbilityID::Cancel) \
+	op(DemoAbilityID::Ability1) \
+	op(DemoAbilityID::Ability2) 
 
 enum class DemoAbilityID : uint8;
 template<> struct TIsUEnumClass<DemoAbilityID> { enum { Value = true }; };

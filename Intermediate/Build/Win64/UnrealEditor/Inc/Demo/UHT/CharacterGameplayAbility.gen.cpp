@@ -60,9 +60,9 @@ struct Z_Construct_UClass_UCharacterGameplayAbility_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UCharacterGameplayAbility_Statics::NewProp_AbilityInputID_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UCharacterGameplayAbility_Statics::NewProp_AbilityInputID = { "AbilityInputID", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterGameplayAbility, AbilityInputID), Z_Construct_UEnum_Demo_DemoAbilityID, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AbilityInputID_MetaData), NewProp_AbilityInputID_MetaData) }; // 144979148
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UCharacterGameplayAbility_Statics::NewProp_AbilityInputID = { "AbilityInputID", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterGameplayAbility, AbilityInputID), Z_Construct_UEnum_Demo_DemoAbilityID, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AbilityInputID_MetaData), NewProp_AbilityInputID_MetaData) }; // 2189134072
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UCharacterGameplayAbility_Statics::NewProp_AbilityID_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UCharacterGameplayAbility_Statics::NewProp_AbilityID = { "AbilityID", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterGameplayAbility, AbilityID), Z_Construct_UEnum_Demo_DemoAbilityID, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AbilityID_MetaData), NewProp_AbilityID_MetaData) }; // 144979148
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UCharacterGameplayAbility_Statics::NewProp_AbilityID = { "AbilityID", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterGameplayAbility, AbilityID), Z_Construct_UEnum_Demo_DemoAbilityID, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AbilityID_MetaData), NewProp_AbilityID_MetaData) }; // 2189134072
 void Z_Construct_UClass_UCharacterGameplayAbility_Statics::NewProp_ActivateAbilityOnGranted_SetBit(void* Obj)
 {
 	((UCharacterGameplayAbility*)Obj)->ActivateAbilityOnGranted = 1;
@@ -116,10 +116,10 @@ UCharacterGameplayAbility::~UCharacterGameplayAbility() {}
 struct Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_CharacterGameplayAbility_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCharacterGameplayAbility, UCharacterGameplayAbility::StaticClass, TEXT("UCharacterGameplayAbility"), &Z_Registration_Info_UClass_UCharacterGameplayAbility, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterGameplayAbility), 3241944091U) },
+		{ Z_Construct_UClass_UCharacterGameplayAbility, UCharacterGameplayAbility::StaticClass, TEXT("UCharacterGameplayAbility"), &Z_Registration_Info_UClass_UCharacterGameplayAbility, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterGameplayAbility), 356462535U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_CharacterGameplayAbility_h_767346241(TEXT("/Script/Demo"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_CharacterGameplayAbility_h_1273651464(TEXT("/Script/Demo"),
 	Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_CharacterGameplayAbility_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_Abilities_CharacterGameplayAbility_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

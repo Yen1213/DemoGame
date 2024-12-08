@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -11,7 +9,7 @@ UCLASS()
 class DEMO_API ADemoPlayerCharacterBase : public ADemoCharacterBase
 {
 	GENERATED_BODY()
-	
+
 public:
 	ADemoPlayerCharacterBase(const class FObjectInitializer& ObjectInitializer);
 
@@ -72,9 +70,17 @@ protected:
 
 	void InitializeStartingValues(ADemoPlayerState* PS);
 
+	UFUNCTION()
+	void OnRep_MeshRotation();
+
+	UPROPERTY(ReplicatedUsing = OnRep_MeshRotation)
+	FRotator ReplicatedMeshRotation;
+
 private:
-	bool ASCInputBound = false;  
+	bool ASCInputBound = false;
 
 	void InitHUD() const;
+
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 };

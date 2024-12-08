@@ -124,7 +124,7 @@ struct Z_Construct_UFunction_ADemoCharacterBase_GetAbilityLevel_Statics
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_ADemoCharacterBase_GetAbilityLevel_Statics::NewProp_AbilityID_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_ADemoCharacterBase_GetAbilityLevel_Statics::NewProp_AbilityID = { "AbilityID", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DemoCharacterBase_eventGetAbilityLevel_Parms, AbilityID), Z_Construct_UEnum_Demo_DemoAbilityID, METADATA_PARAMS(0, nullptr) }; // 144979148
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_ADemoCharacterBase_GetAbilityLevel_Statics::NewProp_AbilityID = { "AbilityID", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DemoCharacterBase_eventGetAbilityLevel_Parms, AbilityID), Z_Construct_UEnum_Demo_DemoAbilityID, METADATA_PARAMS(0, nullptr) }; // 2189134072
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ADemoCharacterBase_GetAbilityLevel_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DemoCharacterBase_eventGetAbilityLevel_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADemoCharacterBase_GetAbilityLevel_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADemoCharacterBase_GetAbilityLevel_Statics::NewProp_AbilityID_Underlying,
@@ -477,7 +477,7 @@ struct Z_Construct_UClass_ADemoCharacterBase_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ADemoCharacterBase_FinishDying, "FinishDying" }, // 3644414335
-		{ &Z_Construct_UFunction_ADemoCharacterBase_GetAbilityLevel, "GetAbilityLevel" }, // 912016431
+		{ &Z_Construct_UFunction_ADemoCharacterBase_GetAbilityLevel, "GetAbilityLevel" }, // 1035493317
 		{ &Z_Construct_UFunction_ADemoCharacterBase_GetCharacterLevel, "GetCharacterLevel" }, // 2890125215
 		{ &Z_Construct_UFunction_ADemoCharacterBase_GetHealth, "GetHealth" }, // 3042906030
 		{ &Z_Construct_UFunction_ADemoCharacterBase_GetMaxHealth, "GetMaxHealth" }, // 344745179
@@ -554,10 +554,10 @@ ADemoCharacterBase::~ADemoCharacterBase() {}
 struct Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_DemoCharacterBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADemoCharacterBase, ADemoCharacterBase::StaticClass, TEXT("ADemoCharacterBase"), &Z_Registration_Info_UClass_ADemoCharacterBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADemoCharacterBase), 2694274749U) },
+		{ Z_Construct_UClass_ADemoCharacterBase, ADemoCharacterBase::StaticClass, TEXT("ADemoCharacterBase"), &Z_Registration_Info_UClass_ADemoCharacterBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADemoCharacterBase), 3355480910U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_DemoCharacterBase_h_2107832595(TEXT("/Script/Demo"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_DemoCharacterBase_h_2616675806(TEXT("/Script/Demo"),
 	Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_DemoCharacterBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Public_Character_DemoCharacterBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

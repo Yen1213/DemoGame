@@ -32,6 +32,10 @@ struct Z_Construct_UEnum_Demo_DemoAbilityID_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+		{ "Ability1.DisplayName", "Ability1" },
+		{ "Ability1.Name", "DemoAbilityID::Ability1" },
+		{ "Ability2.DisplayName", "Ability2" },
+		{ "Ability2.Name", "DemoAbilityID::Ability2" },
 		{ "BlueprintType", "true" },
 		{ "Cancel.DisplayName", "Cancel" },
 		{ "Cancel.Name", "DemoAbilityID::Cancel" },
@@ -46,6 +50,8 @@ struct Z_Construct_UEnum_Demo_DemoAbilityID_Statics
 		{ "DemoAbilityID::None", (int64)DemoAbilityID::None },
 		{ "DemoAbilityID::Confirm", (int64)DemoAbilityID::Confirm },
 		{ "DemoAbilityID::Cancel", (int64)DemoAbilityID::Cancel },
+		{ "DemoAbilityID::Ability1", (int64)DemoAbilityID::Ability1 },
+		{ "DemoAbilityID::Ability2", (int64)DemoAbilityID::Ability2 },
 	};
 	static const UECodeGen_Private::FEnumParams EnumParams;
 };
@@ -75,10 +81,10 @@ UEnum* Z_Construct_UEnum_Demo_DemoAbilityID()
 struct Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Demo_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ DemoAbilityID_StaticEnum, TEXT("DemoAbilityID"), &Z_Registration_Info_UEnum_DemoAbilityID, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 144979148U) },
+		{ DemoAbilityID_StaticEnum, TEXT("DemoAbilityID"), &Z_Registration_Info_UEnum_DemoAbilityID, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2189134072U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Demo_h_804833392(TEXT("/Script/Demo"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Demo_h_3288111027(TEXT("/Script/Demo"),
 	nullptr, 0,
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Demo_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE_Projects_Demo_Source_Demo_Demo_h_Statics::EnumInfo));

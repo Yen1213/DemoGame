@@ -86,19 +86,19 @@ void ADemoPlayerState::HealthChanged(const FOnAttributeChangeData& Data)
 }
 void ADemoPlayerState::MaxHealthChanged(const FOnAttributeChangeData& Data)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Health Changed!"));
+	UE_LOG(LogTemp, Warning, TEXT("MaxHealth Changed!"));
 }
 void ADemoPlayerState::StaminaChanged(const FOnAttributeChangeData& Data)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Health Changed!"));
+	UE_LOG(LogTemp, Warning, TEXT("Stamina Changed!"));
 }
 void ADemoPlayerState::MaxStaminaChanged(const FOnAttributeChangeData& Data)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Health Changed!"));
+	UE_LOG(LogTemp, Warning, TEXT("MaxStamina Changed!"));
 }
 void ADemoPlayerState::CharacterLevelChanged(const FOnAttributeChangeData& Data)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Health Changed!"));
+	UE_LOG(LogTemp, Warning, TEXT("Level Changed!"));
 }
 
 void ADemoPlayerState::StunTagChanged(const FGameplayTag CallbackTag, int32 NewCount)
